@@ -166,7 +166,7 @@ for (int i = 1; i <= 10; i++)
 /// for yordamida 1 dan N gacha bo'lgan sonlar orasida 3 ga qoldiqsiz bo'linadiganlari 
 /// nechta ekanini va ularning yig'indisini hisoblang. 
 System.Console.WriteLine("13-savol natijasi: ");
-int berilganSon = 10;
+int berilganSon = 2;
 int uchgaKarraliSonYigindisi = 0;
 int uchgaKarraliSonlarSoni = 0;
 for (int i = 3; i <= berilganSon; i += 3){
@@ -174,3 +174,26 @@ for (int i = 3; i <= berilganSon; i += 3){
     uchgaKarraliSonYigindisi += i;
 }
 System.Console.WriteLine($"Soni: {uchgaKarraliSonlarSoni} \nYig'indisi: {uchgaKarraliSonYigindisi}");
+
+/// 14. Savol (qiyinroq): 0 dan 12 gacha bo'lgan N butun sonini kiriting. 
+/// for yordamida N! faktorialni hisoblang. 0! = 1.
+System.Console.Write("14-savol natijasi: ");
+int faktorialSon = 5;
+int faktorialNatija = 1;
+for (int i = 1; i <= faktorialSon; i++)
+{
+    faktorialNatija *= i;
+}
+System.Console.WriteLine($"Faktorial: {faktorialNatija}");
+
+/// 15. Savol: 0 yoki undan katta butun son kiriting. while yordamida sonning raqamlari yig'indisini hisoblang. 
+/// Oxirgi raqamni % 10 bilan oling va sonni 10 ga butun bo'lib bo'ling.
+System.Console.Write("15-savol natijasi: ");
+int number = 1258;
+int raqamlariYigindisi = 0;
+while (number > 0)
+{
+    raqamlariYigindisi += number % 10;
+    number /= 10;
+}
+System.Console.WriteLine($"Raqamlar yig'indisi: {raqamlariYigindisi}");
