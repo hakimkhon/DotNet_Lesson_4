@@ -213,18 +213,25 @@ System.Console.WriteLine("16-savol natijasi: ");
 System.Console.Write("0 va 1000 orasida butun son kiriitng: ");
 int tubSon;
 string kiritilganSon = System.Console.ReadLine();
+bool tubmi = true;
 
 tubSon = Convert.ToInt32(kiritilganSon);
-for (int i = 2; i < tubSon - 1; i++)
+if (tubSon == 0 || tubSon == 1)
 {
+    System.Console.WriteLine("Tub son emas");
+    tubmi = false;
+}
+for (int i = 2; i * i <= tubSon; i++)
+{
+
     if (tubSon % i == 0)
     {
         System.Console.WriteLine("Tub son emas");
+        tubmi = false;
         break;
     }
-    else
-    {
-        System.Console.WriteLine("Tub son");
-        break;
-    }
+}
+if (tubmi)
+{
+    System.Console.WriteLine("Tub son");
 }
