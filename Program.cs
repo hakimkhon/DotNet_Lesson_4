@@ -1,19 +1,22 @@
 ﻿
 // 1. musbat, manfiy yoki nol ekanini aniqlang.
+using System;
+using System.ComponentModel.DataAnnotations;
+
 int son = 8;
 
 System.Console.Write("1-savol natijasi: ");
 if (son > 0)
 {
-    Console.WriteLine("Musbat");
+    System.Console.WriteLine("Musbat");
 }
 else if (son < 0)
 {
-    Console.WriteLine("Manfiy");
+    System.Console.WriteLine("Manfiy");
 }
 else
 {
-    Console.WriteLine("nol");
+    System.Console.WriteLine("nol");
 }
 
 // 2. Son juft yoki toq ekanini aniqlang.
@@ -149,7 +152,8 @@ System.Console.Write((juftYigindi == 0) ? "Juft son yo'q Yig'indi: 0" : $"\nYig'
 
 System.Console.Write("\n11-savol natijasi: ");
 int sonSavol_11 = 23;
-for (int i = 5; i <= sonSavol_11; i += 5){
+for (int i = 5; i <= sonSavol_11; i += 5)
+{
     System.Console.Write(i + " ");
 }
 
@@ -169,7 +173,8 @@ System.Console.WriteLine("13-savol natijasi: ");
 int berilganSon = 2;
 int uchgaKarraliSonYigindisi = 0;
 int uchgaKarraliSonlarSoni = 0;
-for (int i = 3; i <= berilganSon; i += 3){
+for (int i = 3; i <= berilganSon; i += 3)
+{
     uchgaKarraliSonlarSoni++;
     uchgaKarraliSonYigindisi += i;
 }
@@ -197,3 +202,29 @@ while (number > 0)
     number /= 10;
 }
 System.Console.WriteLine($"Raqamlar yig'indisi: {raqamlariYigindisi}");
+
+/// 16. Savol (qiyinroq): 0 dan 1000 gacha butun son kiriting. 
+/// for yordamida 2 dan N - 1 gacha bo'luvchilarni tekshirib, 
+/// kiritilgan son tub yoki tub emasligini aniqlang. 
+/// Tub son faqat 1 ga va o'ziga bo'linadi. 2 dan kichik qiymatlar tub emas. 
+/// Bo'luvchi topilmasa, Tub son; aks holda Tub son emas deb chiqaring.
+System.Console.WriteLine("16-savol natijasi: ");
+
+System.Console.Write("0 va 1000 orasida butun son kiriitng: ");
+int tubSon;
+string kiritilganSon = System.Console.ReadLine();
+
+tubSon = Convert.ToInt32(kiritilganSon);
+for (int i = 2; i < tubSon - 1; i++)
+{
+    if (tubSon % i == 0)
+    {
+        System.Console.WriteLine("Tub son emas");
+        break;
+    }
+    else
+    {
+        System.Console.WriteLine("Tub son");
+        break;
+    }
+}
